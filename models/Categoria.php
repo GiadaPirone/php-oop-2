@@ -10,7 +10,11 @@
             $this->nome = $nome;
         }
 
-       
+        //funzione GET categoria dall'istanza
+        public function getNomeCatgoria(){
+            return $this-> nome;
+        }
+
     }
 
 ?>

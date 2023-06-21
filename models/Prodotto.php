@@ -24,11 +24,12 @@
             return $this-> prezzo;
         }
 
-        //funzione GET categoria dall'istanza
-        public function getNomeCatgoria(){
-            return $this-> nome;
-        }
+        // public function getImg(){
+        //     return $this-> img;
+        // }
 
+
+       
 
 
 
