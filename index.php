@@ -3,6 +3,7 @@
 require __DIR__ . "/models/Categoria.php";
 require __DIR__ . "/models/Prodotto.php";
 require __DIR__ . "/models/ProdottoGioco.php";
+require __DIR__. "/models/ProdottoAlimentare.php";
 
 //creazione di due prodotti con categoria:
 $peluche = new Prodotto("Peluche Orso", 15 . "euro", new Categoria("cane"));
@@ -13,12 +14,19 @@ var_dump($nuoviProdotti);
 
 //creazione prodotti gioco con categoria:
 $parcoGiochi = new ProdottoGioco("Parco Giochi", 35.99 . "euro", new Categoria("criceto"), "marrone", "forma scivolo");
-$mouse = new ProdottoGioco("Mouse Atomatico", 18.10 . "euro", new Categoria("gatto"), "grigio", "forma di topolino");
-$altalena = new ProdottoGioco("altalena Per Uccellini", 16.99 . "euro", new Categoria("uccellini"),"multicolor","Forma altalena");
+$mouse = new ProdottoGioco("Mouse Atomatico", 18.12 . "euro", new Categoria("gatto"), "grigio", "forma di topolino");
+$altalena = new ProdottoGioco("Altalena Per Uccellini", 16.99 . "euro", new Categoria("uccellini"),"multicolor","Forma altalena");
 
 $nuoviProdottiGioco = [$parcoGiochi, $mouse, $altalena];
 var_dump($nuoviProdottiGioco);
 
+
+//creazione prodotti alimentari per diverse categorie
+$almoNature = new ProdottoAlimentare("Almo Nature", 13.50 . " euro", new Categoria("cane"), "Croccantini", "Manzo e Riso");
+$felix = new ProdottoAlimentare("Felix", 36.99 . " euro", new Categoria("gatto"), "Cibo Umido", "Merluzzo e Tonno");
+$donat = new ProdottoAlimentare("Donath", 4.69 . " euro", new Categoria("Uccellini"), "Palline di Grasso" );
+
+$nuovoProdottiAlim = [$almoNature, $felix, $donat];
 ?>
 
 <!DOCTYPE html>
@@ -44,7 +52,7 @@ var_dump($nuoviProdottiGioco);
                             <div class="card-body">
                                 <h5 class="card-title"></h5>
                                 <p class="card-text"> Nome Prodotto: <?= $nuovoProdotto->getNomeProdotto() ?></p>
-                                <p class="card-text"> Prezzo Prodotto: <?= $nuovoProdotto->getPrezzoProdotto() ?></p>
+                                <p class="card-text"> Prezzo: <?= $nuovoProdotto->getPrezzoProdotto() ?></p>
                                 <a href="#" class="btn btn-primary">Acquista</a>
                             </div>
                         </div>
@@ -58,7 +66,7 @@ var_dump($nuoviProdottiGioco);
     <div class="container ">
         <div class="row">
             <div class="col">
-                <h1>Prodotti gioco </h1>
+                <h1>Prodotti Gioco </h1>
                 <div class="col d-flex">
                     <?php foreach ($nuoviProdottiGioco as $nuovoGioco) { ?>
                         <div  class="card d-flex" style="width: 18rem;">
@@ -66,7 +74,7 @@ var_dump($nuoviProdottiGioco);
                             <div class="card-body">
                                 <h5 class="card-title"></h5>
                                 <p class="card-text"> Nome Prodotto: <?= $nuovoGioco->getNomeProdotto() ?></p>
-                                <p class="card-text"> Prezzo Prodotto:  <?= $nuovoGioco->getPrezzoProdotto() ?></p>
+                                <p class="card-text"> Prezzo:  <?= $nuovoGioco->getPrezzoProdotto() ?></p>
                                 <p class="card-text"> Colore: <?= $nuovoGioco->getColoreGioco() ?></p>
                                 <p class="card-text"> Forma: <?= $nuovoGioco->getFormaGioco() ?> </p>
                                 
@@ -78,7 +86,30 @@ var_dump($nuoviProdottiGioco);
             </div>
         </div>
     </div>
-
+    
+    <div class="container ">
+        <div class="row">
+            <div class="col">
+                <h1>Prodotti Alimentari </h1>
+                <div class="col d-flex">
+                    <?php foreach ($nuovoProdottiAlim as $nuovoAlimento) { ?>
+                        <div  class="card d-flex" style="width: 18rem;">
+                            <!-- <img src="..." class="card-img-top" alt="..."> -->
+                            <div class="card-body">
+                                <h5 class="card-title"></h5>
+                                <p class="card-text"> Nome Prodotto: <?= $nuovoAlimento->getNomeProdotto() ?></p>
+                                <p class="card-text"> Prezzo:  <?= $nuovoAlimento->getPrezzoProdotto() ?></p>
+                                <p class="card-text"> Tipologia: <?= $nuovoAlimento->getTipoAlimento() ?></p>
+                                <p class="card-text"> Gusto: <?= $nuovoAlimento->getGustoAlimento() ?> </p>
+                                
+                                <a href="#" class="btn btn-primary">Acquista</a>
+                            </div>
+                        </div>
+                     <?php } ?>
+                </div>
+            </div>
+        </div>
+    </div>
 
     
 

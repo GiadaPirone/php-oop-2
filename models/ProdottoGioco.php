@@ -5,9 +5,9 @@
         private $forma;
         private $dimensione;
 
-        function __construct( $name, $prezzo, Categoria $categoria, $colore, $forma )
+        function __construct( $nome, $prezzo, Categoria $categoria, $colore, $forma )
         {
-            parent::__construct($name, $prezzo, $categoria);
+            parent::__construct($nome, $prezzo, $categoria);
 
             $this->colore = $colore;
             $this->forma = $forma;
