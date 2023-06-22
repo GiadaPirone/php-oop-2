@@ -4,13 +4,15 @@
         private $nome;
         private $prezzo;
         private $categoria;
+        public $img;
 
         // COSTRUTTORE.
-        public function __construct($nome, $prezzo, Categoria $categoria)
+        public function __construct($nome, $prezzo, Categoria $categoria, $img)
         {
             $this -> nome = $nome;
             $this-> prezzo = $prezzo;
             $this-> categoria = $categoria;
+            $this-> img = $img; 
         }
 
 

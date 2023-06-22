@@ -5,9 +5,9 @@
         private $materiale;
         private $dimensioni;
 
-        function __construct($nome, $prezzo, Categoria $categoria, $modello, $materiale, $dimensioni)
+        function __construct($nome, $prezzo, Categoria $categoria,$img, $modello, $materiale, $dimensioni)
         {
-            parent::__construct($nome, $prezzo, $categoria);
+            parent::__construct($nome, $prezzo, $categoria,$img);
 
             $this-> modello = $modello;
             $this-> materiale = $materiale;

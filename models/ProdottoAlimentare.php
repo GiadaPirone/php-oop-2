@@ -4,9 +4,9 @@
         private $tipologia;
         private $gusto;
 
-        function __construct($nome, $prezzo, Categoria $categoria, $tipologia, $gusto = null)
+        function __construct($nome, $prezzo, Categoria $categoria, $img,  $tipologia, $gusto = null)
         {
-            parent::__construct($nome, $prezzo, $categoria);
+            parent::__construct($nome, $prezzo, $categoria,$img);
 
             $this->tipologia = $tipologia;
             $this-> gusto = $gusto;
